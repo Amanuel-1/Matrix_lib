@@ -1,5 +1,6 @@
 /***
  * Developed by :: Amanuel Garomsa Oluma :
+ * Studying Computer Science at University Of Addis Ababa.
  * Status :: Still ONGOING
  * [2023 GC]
  */
@@ -169,6 +170,10 @@ if(((m instanceof Matrix && n instanceof Matrix )&& (r!=r1 || c!=c1))  || ((type
 //******************************************/
 /*TODO :: multiply a amatrix */
 /**********************multiply-dynamic****************** */
+    /**
+ * @param {Matrix|number[][]} m
+ * @return {Matrix}
+ */
 multiply(m){
   if(typeof m =='number'){
     let result  = new Matrix(this.rows,this.cols) //assign the result  to a result variable
@@ -203,6 +208,10 @@ return result;
   
 }
 /*********transpoce of a matrix ****************************/
+    /**
+ * @param {Matrix|number} m 
+ * @return {Matrix}
+ */
 static transpose(m){
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
   let row1 =  (m instanceof Matrix) ? matrix1.length : m.length ;
@@ -216,7 +225,11 @@ static transpose(m){
 return result;
 }
 /***********************multiply-static************************ */
-
+/**
+ * @param {Matrix|number[][]} row
+ * @param {Matrix|number[][]} col
+ * @return {Matrix}
+ */
 static multiply(m,n){
   /* assign the neccessary variables to the code for the first argument if the argument is not a number */
   /* if i assigned  the variable for the second argument n , i would struggle to handle the ocde when n is a number not a matrix */
@@ -256,6 +269,12 @@ return result;
 
 /***************************************** */
 //row multiply
+    /**
+ * @param {Matrix} m
+ * @param {number} row
+ * @param {number} scale
+ * @return {Matrix}
+ */
 static rowScale(m,row,scale){ //is used to make a scalar multiplication with a specified row.
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
   let row1 =  (m instanceof Matrix) ? matrix1.length : m.length ;
@@ -271,7 +290,12 @@ static rowScale(m,row,scale){ //is used to make a scalar multiplication with a s
 
 return result;
 }
-
+/**
+ * @param {Matrix} m
+ * @param {number} col
+ * @param {number} scale
+ * @return {Matrix}
+ */
 //column multiply
 static columnScale(m,col,scale){ //is used to make a scalar multiplication with a specified row.
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
@@ -291,6 +315,12 @@ return result;
 /** TODO :: but before this i have to make a minor function  to get the minor of the matrix during iteration
  * a code to find the minor of a matrix at a given position .
  */
+    /**
+ * @param {Matrix} m
+ * @param {number} i
+ * @param {number} j
+ * @return {Matrix}
+ */
  static getminor(m,i,j){
   const getcut =(arr,index) => [...arr.slice(0,index),...arr.slice(index+1)]
   let newrow = getcut(m,i)//.map(row=>{
@@ -300,6 +330,10 @@ return result;
   return newnewrow;
 }
 /******************Matrix determinant******************** */
+    /**
+ * @param {Matrix} m
+ * @return {Matrix}
+ */
 static determinant(m){
 
   const sign =  (index) => index % 2 === 0 ? 1:-1 ; //a function that returns the sign according to the position of the element in matrix
@@ -324,7 +358,10 @@ static determinant(m){
 
 
 }
-
+/**
+ * @param {Matrix} m
+ * @return {Matrix}
+ */
 /*************************the Minor of a Matrix**************************** */
 static minor(m){ //this is the code used to get the minor of the matrix in general and then return the result as an instance of the Matrix class
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
@@ -344,7 +381,10 @@ return result;
 
 }
 /******************** Cofactor of a Matrix************************** */
-
+/**
+ * @param {Matrix} m
+ * @return {Matrix}
+ */
 static cofactor(m){//this code calculates the cofactor of each element in the given matrix and spill it to a new instance of the Matrix class and then 
   //returns it .
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
@@ -365,6 +405,10 @@ static cofactor(m){//this code calculates the cofactor of each element in the gi
 return result;
 }
 /****************** Adjoint of a Matrix************************ */
+   /**
+ * @param {Matrix} m
+ * @return {Matrix}
+ */
 static adjoint(m){
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
   let row1 =  (m instanceof Matrix) ? matrix1.length : m.length ;
@@ -384,6 +428,10 @@ static adjoint(m){
 
 return this.transpose(result);
 }
+    /**
+ * @param {Matrix} m
+ * @return {Matrix}
+ */
 /*********inverse of a matrix ***********************  */
 static inverse(m){//it returns the inverse of a matrix m.
   let matrix1 = (m instanceof Matrix) ? m.data : m ;
@@ -403,6 +451,6 @@ static inverse(m){//it returns the inverse of a matrix m.
 
   return result ;
 }
-/
+
 }
 
