@@ -5,7 +5,7 @@
  * [2023 GC]
  */
 
-export default class Matrix{
+class Matrix{
     constructor(rows,cols){
         this.rows = rows;
         this.cols = cols;
@@ -453,4 +453,7 @@ static inverse(m){//it returns the inverse of a matrix m.
 }
 
 }
+
+
+export default Matrix;
 
