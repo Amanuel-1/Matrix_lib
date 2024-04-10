@@ -1,0 +1,25 @@
+{
+  "name": "matrix_me",
+  "version": "1.0.0",
+  "description": "curated robust matrix computation library for javascript",
+  "main": "Matrix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amanuel-1/Matrix_lib.git"
+  },
+  "keywords": [
+    "matrix",
+    "javascript",
+    "algebra",
+    "computation"
+  ],
+  "author": "Amanuel Garomsa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amanuel-1/Matrix_lib/issues"
+  },
+  "homepage": "https://github.com/Amanuel-1/Matrix_lib#readme"
+}

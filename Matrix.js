@@ -455,5 +455,5 @@ static inverse(m){//it returns the inverse of a matrix m.
 }
 
 
-export default Matrix;
+module.exports  ={Matrix};
 
